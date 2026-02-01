@@ -68,14 +68,14 @@ class TestBooksCollector:
         collector_book.add_book_in_favorites('Шерлок Холмс')
         assert len(collector_book.get_list_of_favorites_books()) == 2    
 
-    def test_delete_book_from_favorites_remove_one_book_possible(self, collector_book):
+    def test_delete_book_from_favorites_remove_book_possible(self, collector_book):
         collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
         collector_book.add_book_in_favorites('Шерлок Холмс')
         collector_book.delete_book_from_favorites('Шерлок Холмс')
         fav_book = collector_book.get_list_of_favorites_books()
         assert 'Шерлок Холмс' not in fav_book
 
-    def test_get_list_of_favorites_books_return_list_of_favorites_books_successfully(self, collector_book):
+    def test_get_list_of_favorites_books_return_list_of_favorites_books_ok(self, collector_book):
         collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
         collector_book.add_book_in_favorites('Звонок')
         assert len(collector_book.get_list_of_favorites_books()) == 2  

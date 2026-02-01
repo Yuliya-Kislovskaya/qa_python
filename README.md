@@ -1,7 +1,7 @@
 # qa_python В данном проекте написаны тесты для приложения BooksCollector, позволяющего установит жанр книги и добавлять их в избранное. 
 
 # Описание тестов:
-1.test_add_new_book_invalid_length_more_40
+##1.test_add_new_book_invalid_length_more_40##
    Проверяет, что книга с названием более 40 символов не добавляется в коллекцию.
 
 2.test_add_new_book_invalid_length_is_0

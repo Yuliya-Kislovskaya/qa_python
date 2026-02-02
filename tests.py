@@ -62,20 +62,20 @@ class TestBooksCollector:
         collector.set_book_genre('Звонок', 'Ужасы')
         assert 'Звонок' not in collector.get_books_for_children()
 
-    def test_add_book_in_favorites_add_book_one_more_time_not_possible(self, collector_book):
-        collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
-        collector_book.add_book_in_favorites('Шерлок Холмс')
-        collector_book.add_book_in_favorites('Шерлок Холмс')
-        assert len(collector_book.get_list_of_favorites_books()) == 2    
+    def test_add_book_in_favorites_add_book_one_more_time_not_possible(self):
+        collector.add_book_in_favorites('Гордость и предубеждение и зомби')
+        collector.add_book_in_favorites('Шерлок Холмс')
+        collector.add_book_in_favorites('Шерлок Холмс')
+        assert len(collector.get_list_of_favorites_books()) == 2    
 
-    def test_delete_book_from_favorites_remove_book_possible(self, collector_book):
-        collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
-        collector_book.add_book_in_favorites('Шерлок Холмс')
-        collector_book.delete_book_from_favorites('Шерлок Холмс')
-        fav_book = collector_book.get_list_of_favorites_books()
+    def test_delete_book_from_favorites_remove_book_possible(self):
+        collector.add_book_in_favorites('Гордость и предубеждение и зомби')
+        collector.add_book_in_favorites('Шерлок Холмс')
+        collector.delete_book_from_favorites('Шерлок Холмс')
+        fav_book = collector.get_list_of_favorites_books()
         assert 'Шерлок Холмс' not in fav_book
 
-    def test_get_list_of_favorites_books_return_list_of_favorites_books_ok(self, collector_book):
-        collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
-        collector_book.add_book_in_favorites('Звонок')
-        assert len(collector_book.get_list_of_favorites_books()) == 2  
+    def test_get_list_of_favorites_books_return_list_of_favorites_books_ok(self):
+        collector.add_book_in_favorites('Гордость и предубеждение и зомби')
+        collector.add_book_in_favorites('Звонок')
+        assert len(collector.get_list_of_favorites_books()) == 2  

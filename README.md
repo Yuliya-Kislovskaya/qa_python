@@ -30,4 +30,12 @@
 
 **10.test_get_list_of_favorites_books_return_list_of_favorites_books_ok**
     Проверка вывода списка избранного
-   
+
+**11.test_get_book_genre_return_genre_set**
+    Проверка вывода жанра выбранной книги 
+
+**12.test_add_new_book_add_books**
+    Проверка, что новая книга добавляется в коллекцию с пустым жанром по умолчанию.
+
+**13.test_get_books_genre**
+     Проверка вывода словаря книг с жанрами.

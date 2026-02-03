@@ -79,3 +79,16 @@ class TestBooksCollector:
         collector_book.add_book_in_favorites('Гордость и предубеждение и зомби')
         collector_book.add_book_in_favorites('Шерлок Холмс')
         assert len(collector_book.get_list_of_favorites_books()) == 2  
+
+    def test_get_book_genre_return_genre_set(self, collector_book):
+        assert collector_book.get_book_genre('Шерлок Холмс') == 'Детективы'
+    
+    def test_add_new_book_add_books(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби')
+        assert collector.books_genre['Гордость и предубеждение и зомби'] == ''
+
+    def test_get_books_genre(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби')
+        assert collector.get_books_genre() == {'Гордость и предубеждение и зомби': ''}
